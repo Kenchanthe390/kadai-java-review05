@@ -40,14 +40,20 @@ public class Review05 {
             pstmt.setInt(1, input);     // PreparedStatementオブジェクトの?に値をセット
             rs = pstmt.executeQuery();  // Select文の実行と結果を格納／代入
 
+            System.out.println("while前の文章");    // 検証用に追加
+
         // 結果を表示する
             while (rs.next()) {
-            String name = rs.getString("name");
-            int age = rs.getInt("age");
+                System.out.println("while中の文章その1");     // 検証用に追加
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                System.out.println(name);
+                System.out.println(age);
 
-            System.out.println(name);
-            System.out.println(age);
+                System.out.println("while中の文章その2");     // 検証用に追加
             }
+
+            System.out.println("while後の文章");            // 検証用に追加
 
         } catch (ClassNotFoundException e) {
             System.err.println("JDBCドライバーロード時にエラーが発生しました！");
